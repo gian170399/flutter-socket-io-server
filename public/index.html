@@ -25,12 +25,14 @@
         socket.emit('mensaje', {nombre:'Giancarlo'});
 
         //recibimos el mensaje
-        //el payload me sirve ami para que el servidor envíe lo que yo quiera enviar
-        socket.on('mensaje',function(payload){
+        //el payload me sirve a mi para que el servidor envíe lo que yo quiera enviar
+        socket.on('nuevo-mensaje',function(payload){
             console.log('Escuchando:',payload);
         })
+        socket.on('active-bands',function(bands){
+            console.clear;
+            console.table(bands);
+        })
     </script>
-  
-
 </body>
 </html>
